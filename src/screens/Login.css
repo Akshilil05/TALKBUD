@@ -1,0 +1,194 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.background-image {
+    background-image: url(https://miro.medium.com/v2/resize:fit:1358/1*iGdFJTHMIG79N2HChWaooQ.gif);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: 35%;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Lucida Handwriting', cursive;
+    color: white;
+    margin-bottom: 60px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 88%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+input:hover {
+    box-shadow: 0 0 1px 3px rgba(81, 95, 253, 0.8);
+    outline: none;
+}
+
+button {
+    width: 60%;
+    padding: 10px;
+    background-color: #0d8fec;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #083471;
+}
+
+.links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.forgot-password, .signup-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.forgot-password:hover, .signup-link:hover {
+    text-decoration: underline;
+}
+
+.facebook-btn {
+    margin-top: 20px;
+    width: 88%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(77, 111, 197);
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.facebook-btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .loginForm {
+        padding: 20px;
+        width: 90%;
+        margin-left: 2%;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    input {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .facebook-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .links {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .forgot-password, .signup-link {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .login-form-container {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .loginForm {
+        width: 100%;
+        margin-left: 20%;
+    }
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .facebook-btn {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .links {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .signup-link {
+        font-size: 14px;
+    }
+}

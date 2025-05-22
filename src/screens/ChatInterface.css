@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, #000000, #434343);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .header {
+    background-color: #000000;
+    color: white;
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 40px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h2 {
+    margin: 0;
+  }
+  
+  .menu-icon {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 11;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 12;
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 12px 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .dropdown a:hover {
+    background-color: #1c1b1b;
+    color: white;
+  }
+  
+  .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://kevinmelgarejo.com/wp-content/uploads/2018/06/drib_blink_bot.gif'),
+                      linear-gradient(to right, #000000, #434343);
+    background-size: 170% 80%;  
+    background-repeat: no-repeat;  
+    background-position: center center;  
+    opacity: 0.6;
+    z-index: 1;
+  }
+  
+  
+  .mic-container {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+  }
+  
+  .mic-btn {
+    background-color: white;
+    padding: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  .mic-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .mic-btn img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  /* Frequency animation */
+  .frequency-bars {
+    margin-top: 20px;
+    height: 40px;
+    display: none;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  
+  .bar {
+    width: 6px;
+    height: 10px;
+    background: white;
+    border-radius: 4px;
+    animation: bounce 1s infinite ease-in-out;
+  }
+  
+  .bar:nth-child(1) { animation-delay: 0s; }
+  .bar:nth-child(2) { animation-delay: 0.1s; }
+  .bar:nth-child(3) { animation-delay: 0.2s; }
+  .bar:nth-child(4) { animation-delay: 0.3s; }
+  .bar:nth-child(5) { animation-delay: 0.4s; }
+  
+  @keyframes bounce {
+    0%, 100% { height: 10px; }
+    50% { height: 35px; }
+  }
+  
+  /* ---------- RESPONSIVE STYLES ---------- */
+  
+  /* Mobile (up to 600px) */
+  @media (max-width: 600px) {
+    .header {
+      font-size: 28px;
+      padding: 30px 20px;
+    }
+  
+    .menu-icon {
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+    }
+  
+    .dropdown a {
+      font-size: 16px;
+      padding: 10px 16px;
+    }
+  
+    .mic-btn {
+      padding: 18px;
+    }
+  
+    .mic-btn img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .frequency-bars {
+      height: 30px;
+    }
+  
+    .bar {
+      width: 4px;
+      height: 8px;
+    }
+  }
+  
+  /* Tablets (601px - 992px) */
+  @media (min-width: 601px) and (max-width: 992px) {
+    .header {
+      font-size: 32px;
+      padding: 40px;
+    }
+  
+    .menu-icon {
+      font-size: 36px;
+      top: 40px;
+      right: 25px;
+    }
+  
+    .dropdown a {
+      font-size: 18px;
+    }
+  
+    .mic-btn img {
+      width: 75px;
+      height: 75px;
+    }
+  
+    .mic-btn {
+      padding: 22px;
+    }
+  
+    .bar {
+      width: 5px;
+      height: 10px;
+    }
+  }
+  
+  /* Desktop (993px and up) */
+  @media (min-width: 993px) {
+    .header {
+      font-size: 30px;
+      padding: 15px;
+    }
+  
+    .menu-icon {
+      font-size: 40px;
+      top: 30px;
+      right: 30px;
+    }
+  
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        url('https://kevinmelgarejo.com/wp-content/uploads/2018/06/drib_blink_bot.gif') center center no-repeat,
+        linear-gradient(to right, #000000, #434343);
+      background-size: 100% 120%;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.6;
+      z-index: 1;
+    }
+  
+    .dropdown a {
+      font-size: 20px;
+    }
+  
+    .mic-btn {
+      background-color: white;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+  
+    .mic-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      left: auto;
+      transform: none;
+      z-index: 10;
+      text-align: center;
+    }
+  
+    .mic-btn img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .bar {
+      width: 6px;
+      height: 10px;
+    }
+  }
+  
