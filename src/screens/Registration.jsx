@@ -26,12 +26,26 @@ const Register = () => {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateInputs(username, password, confirmPassword)) {
-      console.log('Registering user:', username);
-      alert('Signup successful!');
-      navigate('/');  
+        try {
+  const res = await fetch('http://localhost:5000/api/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password })
+  });
+  const data = await res.json();
+  if (res.ok) {
+    alert('Signup successful!');
+    navigate('/');
+  } else {
+    alert(data.error);
+  }
+} catch (err) {
+  alert('Error: Unable to connect to server.');
+}
+
     }
   };
 

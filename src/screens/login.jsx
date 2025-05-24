@@ -13,13 +13,25 @@ const Login = () => {
     return emailPattern.test(username) && password.length >= 6;
   };
 
-  const loginUser = (username, password) => {
-    console.log('Logging in with:', username, password);
-    setTimeout(() => {
+   const loginUser = async (username, password) => {
+  try {
+    const res = await fetch('http://localhost:5000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    const data = await res.json();
+    if (res.ok) {
       alert('Login successful!');
       navigate('/home');
-    }, 500);
-  };
+    } else {
+      alert(data.error);
+    }
+  } catch (err) {
+    alert('Error: Unable to connect to server.');
+  }
+};
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
